@@ -1,0 +1,265 @@
+:root{
+    --cor-background: #EFEFEF;
+    --cor-background-form: #FFF;
+    --cor-roxa: #5C42FF;
+    --cor-preta: #282828;
+    --cor-vermelho-invalido: #F17171;
+}
+
+
+body {
+    position: relative;
+    background-color: var(--cor-background);
+    color: var(--cor-preta);
+}
+
+.div-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 5vh auto;
+    padding: 2rem;
+    background-color: var(--cor-background-form);
+    border-radius: 1.6rem;
+    box-shadow: 0px 0px 40px 5px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 3rem;
+    text-align: center;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form__fiedlset {
+    display: flex;
+    flex-direction: column;
+}
+
+.form__fiedlset:nth-child(1) {
+    margin-top: 3rem;
+    padding-bottom: 5rem;
+}
+
+.form__fiedlset>legend {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--cor-roxa);
+}
+
+input, select {
+    width: 80vw;
+    padding: 2.8rem 1.4rem 1.4rem 1.4rem;
+    background-color: var(--cor-background);
+    border-radius: 0.8rem;
+    border: 2px solid var(--cor-background);
+}
+
+input:focus, select:focus {
+    border: 2px solid var(--cor-roxa);
+}
+
+.form__input, .form__select, .form__date {
+    position: relative;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.form__input>label, .form__date>label, .form__select>label{
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.form__input>label, .form__date>label {
+    left: 16px;
+}
+
+.form__select>label {
+    left: 20px;
+}
+
+.form__input>input:focus + label,
+.form__input>input:not(:placeholder-shown) + label,
+.form__select>select:focus + label,
+.form__select>select:valid + label,
+.form__date>input:focus + label,
+.form__date>input:valid + label {
+    top: 8px;
+    font-size: 1.4rem;
+    color: var(--cor-roxa);
+}
+
+
+.form__input-invalido, .form__input-invalido:focus {
+    border: 2px solid var(--cor-vermelho-invalido);
+}
+
+.form__select-and-date {
+    display: flex;
+    flex-direction: column;
+}
+
+.form__date>input:invalid {
+    color: var(--cor-background);
+}
+
+.form__date>input:focus, .form__date>input:valid{
+    color: #282828;
+}
+
+.span__mensagem-validacao {
+    font-size: 1.4rem;
+    color: var(--cor-vermelho-invalido);
+}
+
+.form__input>i {
+    position: absolute;
+    top: 30%;
+    right: 5%;
+    font-size: 2.2rem;
+    color: var(--cor-preta);
+    transition: filter 0.3s ease-out;
+    cursor: pointer;
+}
+
+.form__input>i:hover {
+    filter: brightness(3);
+}
+
+.form__button {
+    justify-self: center;
+    align-self: center;
+    width: 200px;
+    margin-top: 4rem;
+    padding: 1.6rem;
+    background-color: var(--cor-roxa);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--cor-background-form);
+    border-radius: 0.8rem;
+    cursor: pointer;
+    transition: filter 0.3s ease-in-out;
+}
+
+.form__button:hover {
+    filter: brightness(0.9);
+}
+
+
+.toast__cadastro-confirmacao {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    top: 5%;
+    right: 17.5%;
+    height: 100px;
+    width: 60vw;
+    background-color: var(--cor-roxa);
+    border-radius: 0.8rem;
+    visibility: hidden;
+}
+
+.animar {
+    visibility: visible;
+    animation: toast 5s ease-in-out;
+}
+
+.toast__cadastro-confirmacao::before {
+    content: "\F26A";
+    position: absolute;
+    top: 25%;
+    left: 8%;
+    font-family: 'Bootstrap-icons';
+    font-size: 4rem;
+    color: #70DB81;
+}
+
+.toast__cadastro-confirmacao>span {
+    width: 150px;
+    height: 100%;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    font-weight: 700;
+    color: var(--cor-background-form);
+}
+
+.toast__cadastro-confirmacao>i {
+    position: absolute;
+    top: 30%;
+    right: 5%;
+    font-size: 2.5rem;
+    color: var(--cor-background-form);
+    transition: filter 0.3s ease-out;
+    cursor: pointer;
+}
+
+.toast__cadastro-confirmacao>i:hover {
+    filter: brightness(0.8);
+}
+
+@keyframes toast {
+    0%, 100% {
+        opacity: 0;
+    }
+    10%, 70% {
+        opacity: 1;
+    }
+}
+
+@media screen and (min-width:768px) {
+    .div-form {
+        width: 80vw;
+        margin: 5vh auto;
+    }
+
+    input{
+        width: 50vw;
+    }
+
+    .form__select-and-date {
+       flex-direction: row;
+    }
+
+    select {
+        margin: 0 2rem 0 0;
+    }
+
+    select, .form__date>input {
+        width: 24vw;
+    }
+
+    .toast__cadastro-confirmacao {
+        top: 5%;
+        right: 0%;
+        width: 300px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .div-form {
+        width: 820px;
+    }
+
+    input {
+        width: 600px;
+    }
+
+    select, .form__date>input {
+        width: 290px;
+    }
+
+    .toast__cadastro-confirmacao {
+        width: 400px;
+    }
+
+}

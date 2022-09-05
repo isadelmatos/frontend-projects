@@ -1,0 +1,29 @@
+html{
+    font-family: 'Anek Telugu', sans-serif;
+    font-size: 62.5%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 1.6rem;
+}
+
+fieldset, button, input, select {
+    border: none;
+}
+
+input, select {
+    outline: none;
+    font-family: 'Anek Telugu', sans-serif;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0 30px #EFEFEF inset !important;
+}
