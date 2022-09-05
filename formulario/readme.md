@@ -11,6 +11,6 @@
 </div>
 <br>
 <div align="center">
-  <h2>Live do projeto</h2
+  <h2>Live do projeto</h2>
   <img src="./assets/video/live.gif">
- </div>
+</div>
