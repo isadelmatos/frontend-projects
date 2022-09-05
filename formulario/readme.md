@@ -12,5 +12,5 @@
 <br>
 <div align="center">
   <h2>Live do projeto</h2
-  <img src="assets/video/live.gif">
+  <img src="./assets/video/live.gif">
  </div>
