@@ -2,6 +2,7 @@ export class Pessoa {
     constructor(nome, listaDeDesejo = []) {
         this.nome = nome;
         this.listaDeDesejo = listaDeDesejo;
+        this.amigoSecreto = false;
         this.vaiReceberPresente = false;
     }
     ;
@@ -18,10 +19,7 @@ export class Pessoa {
         this.listaDeDesejo.push(presente);
     }
     getAmigoSecreto() {
-        if (this.amigoSecreto) {
-            return this.amigoSecreto;
-        }
-        return false;
+        return this.amigoSecreto;
     }
     setAmigoSecreto(amigo) {
         this.amigoSecreto = amigo;

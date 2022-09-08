@@ -1,6 +1,6 @@
 export class Pessoa {
 
-    private amigoSecreto: string;
+    private amigoSecreto: string | boolean = false;
     private vaiReceberPresente: boolean  = false;
 
     constructor(
@@ -25,12 +25,7 @@ export class Pessoa {
     }
 
     public getAmigoSecreto(): string | boolean {
-
-        if(this.amigoSecreto) {
-            return this.amigoSecreto;
-        }
-
-        return false;
+        return this.amigoSecreto;
     }
 
     public setAmigoSecreto(amigo: string) {
