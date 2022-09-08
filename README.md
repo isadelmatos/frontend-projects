@@ -1,4 +1,4 @@
-# Frontend projects
+# JavaScript projects
 
 ### Projetos
 - [Formulário](formulario)
