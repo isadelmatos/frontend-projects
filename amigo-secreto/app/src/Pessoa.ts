@@ -1,43 +1,42 @@
 export class Pessoa {
 
-    private amigoSecreto: string | boolean = false;
-    private vaiReceberPresente: boolean  = false;
+    private _amigoSecreto: string | boolean = false;
+    private _vaiReceberPresente: boolean  = false;
 
     constructor(
-        private nome: string,
-        private listaDeDesejo: String[] = []
+        private _nome: string,
+        private _listaDeDesejo: String[] = []
     ){};
 
-    public getNome(): string{
-        return this.nome;
+    public get nome(): string{
+        return this._nome;
     }
 
-    public setNome(novoNome: string): void {
-        this.nome = novoNome;
+    public editarNome(novoNome: string) {
+        this._nome = novoNome;
     }
 
-    public getlistaDeDesejo(): String[] {
-        return this.listaDeDesejo;
+    public get listaDeDesejo(): String[] {
+        return this._listaDeDesejo;
     }
 
-    public setlistaDeDesejo(presente: string): void {
-        this.listaDeDesejo.push(presente);
+    public editarlistaDeDesejo(presente: string): void {
+        this._listaDeDesejo.push(presente);
     }
 
-    public getAmigoSecreto(): string | boolean {
-        return this.amigoSecreto;
+    public get amigoSecreto(): string | boolean {
+        return this._amigoSecreto;
     }
 
-    public setAmigoSecreto(amigo: string) {
-        this.amigoSecreto = amigo;
+    public definirAmigoSecreto(amigo: string) {
+        this._amigoSecreto = amigo;
     }
 
-    public getVaiReceberPresente(): boolean {
-        return this.vaiReceberPresente;
+    public get vaiReceberPresente(): boolean {
+        return this._vaiReceberPresente;
     }
 
-    public setVaiReceberPresente() {
-        this.vaiReceberPresente = true;
+    public definirVaiReceberPresente() {
+        this._vaiReceberPresente = true;
     }
-
 }

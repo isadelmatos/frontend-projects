@@ -1,9 +1,9 @@
 export class ListaDeParticipantes {
     constructor() {
-        this.lista = [];
+        this._lista = [];
     }
-    getLista() {
-        return this.lista;
+    get lista() {
+        return this._lista;
     }
     adicionarParticipante(participante) {
         this.lista.push(participante);

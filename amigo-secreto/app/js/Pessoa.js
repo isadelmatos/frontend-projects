@@ -1,33 +1,33 @@
 export class Pessoa {
-    constructor(nome, listaDeDesejo = []) {
-        this.nome = nome;
-        this.listaDeDesejo = listaDeDesejo;
-        this.amigoSecreto = false;
-        this.vaiReceberPresente = false;
+    constructor(_nome, _listaDeDesejo = []) {
+        this._nome = _nome;
+        this._listaDeDesejo = _listaDeDesejo;
+        this._amigoSecreto = false;
+        this._vaiReceberPresente = false;
     }
     ;
-    getNome() {
-        return this.nome;
+    get nome() {
+        return this._nome;
     }
-    setNome(novoNome) {
-        this.nome = novoNome;
+    editarNome(novoNome) {
+        this._nome = novoNome;
     }
-    getlistaDeDesejo() {
-        return this.listaDeDesejo;
+    get listaDeDesejo() {
+        return this._listaDeDesejo;
     }
-    setlistaDeDesejo(presente) {
-        this.listaDeDesejo.push(presente);
+    editarlistaDeDesejo(presente) {
+        this._listaDeDesejo.push(presente);
     }
-    getAmigoSecreto() {
-        return this.amigoSecreto;
+    get amigoSecreto() {
+        return this._amigoSecreto;
     }
-    setAmigoSecreto(amigo) {
-        this.amigoSecreto = amigo;
+    definirAmigoSecreto(amigo) {
+        this._amigoSecreto = amigo;
     }
-    getVaiReceberPresente() {
-        return this.vaiReceberPresente;
+    get vaiReceberPresente() {
+        return this._vaiReceberPresente;
     }
-    setVaiReceberPresente() {
-        this.vaiReceberPresente = true;
+    definirVaiReceberPresente() {
+        this._vaiReceberPresente = true;
     }
 }

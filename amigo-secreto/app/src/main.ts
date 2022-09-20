@@ -9,36 +9,33 @@ const pessoa4 = new Pessoa('Paulo', ['Carro novo']);
 const pessoa5 = new Pessoa('Rafael', ['PC Gamer']);
 
 
-const lista = new ListaDeParticipantes();
-lista.adicionarParticipante(pessoa1);
-lista.adicionarParticipante(pessoa2);
-lista.adicionarParticipante(pessoa3);
-lista.adicionarParticipante(pessoa4);
-lista.adicionarParticipante(pessoa5);
+const participantes = new ListaDeParticipantes();
+participantes.adicionarParticipante(pessoa1);
+participantes.adicionarParticipante(pessoa2);
+participantes.adicionarParticipante(pessoa3);
+participantes.adicionarParticipante(pessoa4);
+participantes.adicionarParticipante(pessoa5);
 
 
+function distribuiAmigoSecreto(lista: Pessoa[]){
 
-const pegaPessoaAleatoria = (lista: Pessoa[]): Pessoa => { 
-    const indice = Math.floor(Math.random() * lista.length);
-    return lista[indice];
-}
+    const pegaPessoaAleatoria = (lista: Pessoa[]): Pessoa => { 
+        const indice = Math.floor(Math.random() * lista.length);
+        return lista[indice];
+    }
 
-const verificaAmigoSecreto = (sorteado:Pessoa, participante: Pessoa) => {
+    const verificaAmigoSecreto = (sorteado:Pessoa, participante: Pessoa) => {
     
-    const seSorteou = sorteado.getNome() === participante.getNome();
-    const jaTemPresenteador =  sorteado.getVaiReceberPresente();
-    const acertou = !seSorteou && !jaTemPresenteador;
-
-    return {
-        acertou: acertou,
-        seSorteou: seSorteou,
-        jaTemPresenteador: jaTemPresenteador
-    };
-}
-
-function distribuiAmigoSecreto(participantes: ListaDeParticipantes){
-
-    const lista = participantes.getLista();
+        const seSorteou = sorteado.nome === participante.nome;
+        const jaTemPresenteador =  sorteado.vaiReceberPresente;
+        const acertou = !seSorteou && !jaTemPresenteador;
+    
+        return {
+            acertou: acertou,
+            seSorteou: seSorteou,
+            jaTemPresenteador: jaTemPresenteador
+        };
+    }
 
     for(const participante of lista) {
 
@@ -46,8 +43,8 @@ function distribuiAmigoSecreto(participantes: ListaDeParticipantes){
         const {acertou, seSorteou, jaTemPresenteador} = verificaAmigoSecreto(pessoaSorteada, participante);
         
         if(acertou) {
-            participante.setAmigoSecreto(pessoaSorteada.getNome());
-            pessoaSorteada.setVaiReceberPresente();
+            participante.definirAmigoSecreto(pessoaSorteada.nome);
+            pessoaSorteada.definirVaiReceberPresente();
         };
 
         while(seSorteou || jaTemPresenteador) {
@@ -58,23 +55,23 @@ function distribuiAmigoSecreto(participantes: ListaDeParticipantes){
 
             if(acertou) {
                 pessoaSorteada = possivelAmigo;
-                participante.setAmigoSecreto(pessoaSorteada.getNome());
-                pessoaSorteada.setVaiReceberPresente();
+                participante.definirAmigoSecreto(pessoaSorteada.nome);
+                pessoaSorteada.definirVaiReceberPresente();
                 break;
 
-            } else if (ultimoParticipante === participante && !ultimoParticipante.getVaiReceberPresente()) {
+            } else if (ultimoParticipante === participante && !ultimoParticipante.vaiReceberPresente) {
 
                 let trocaAmigo = lista.filter(pessoa => {
-                    return pessoa.getNome() !== participante.getAmigoSecreto();
+                    return pessoa.nome !== participante.amigoSecreto;
                 })[0];
 
-                participante.setAmigoSecreto(trocaAmigo.getAmigoSecreto() as string);
-                trocaAmigo.setAmigoSecreto(participante.getNome());
+                participante.definirAmigoSecreto(trocaAmigo.amigoSecreto as string);
+                trocaAmigo.definirAmigoSecreto(participante.nome);
                 break;
             }
         }
     }
 }
 
-distribuiAmigoSecreto(lista);
-console.table(lista.getLista());
+distribuiAmigoSecreto(participantes.lista);
+console.table(participantes.lista);

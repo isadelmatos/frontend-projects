@@ -1,10 +1,10 @@
 import { Pessoa } from "./Pessoa";
 
 export class ListaDeParticipantes {
-    private lista: Pessoa[] = [];
+    private _lista: Pessoa[] = [];
 
-    public getLista(): Pessoa[] {
-        return this.lista;
+    public get lista(): Pessoa[] {
+        return this._lista;
     }
 
     public adicionarParticipante(participante: Pessoa) {
