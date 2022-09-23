@@ -5,8 +5,95 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amigo secreto</title>
-</head>
+
+    <!-- Font family -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+
+    <!-- Css imports -->
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/global.css">
+    <link rel="stylesheet" href="styles/sections/inicio.css">
+    <link rel="stylesheet" href="styles/sections/participantes.css">
+    <link rel="stylesheet" href="styles/sections/fim.css">
 <body>
+    <main>
+            <section class="card inicio">
+                <h1>Amigo secreto</h1>
+                <img src="assets/gift.png" alt="Ilustração 3D de um presente com caixa cor de rosa e laços brancos">
+                <p>Gostaria de organizar um novo amigo secreto?</p>
+                <button>Sim, vamos lá</button>
+            </section>
+            
+            <section class="participantes">
+                <div class="card participantes__card_adicionar">
+                    <h2>Adicionar participantes</h2>
+                    <form action="" class="form">
+                        <label for="nome">Nome</label>
+                        <input type="text" id="nome">
     
+                        <label for="email">Email</label>
+                        <input type="email" id="email">
+    
+                        <label for="lista_desejos">Lista de desejos</label>
+                        <div class="form__wishes">
+                            <!-- <div class="form__wishes__tag">
+                                Presente
+                            </div> -->
+                        </div>
+                        <input type="text" id="lista_desejos">
+                    </form>
+    
+                    <div class="card_adicionar__buttons">
+                        <button>Adicionar</button>
+                        <button>Sortear</button>
+                    </div>
+                </div>
+
+                <div class="participantes__card_gerenciar">
+                    <h3>Participantes já adicionados</h3>
+
+                    <div class="gerenciar__buttons">
+                        <button><i class="bi bi-pencil-square"></i></button>
+                        <button><i class="bi bi-x-lg"></i></button>
+                    </div>
+
+                    <div class="participantes_placeholder">
+                        <div>I</div>
+                        <div>IM</div>
+                        <div>RR</div>
+                        <div>RR</div>
+                        <div>RR</div>
+                        <div>RR</div>
+                        <div>RR</div>
+                        <div>RR</div>
+                        <div>RR</div>
+                        <div>RR</div>
+                        <div>RR</div>
+                        <div>RR</div>
+                        <div>RR</div>
+                </div>
+            </section>
+
+            <section class="card fim">
+                <button><i class="bi bi-arrow-left"></i></button>
+                <figure class="fim__figure">
+                    <img src="assets/congrats.png" alt="Emoji festivo 3D">
+                    <figcaption>Tudo certo!</figcaption>
+                </figure>
+                <p>Um e-mail foi enviado para todos os participantes com seus respectivos amigos secretos.</p>
+                <div class="participantes_placeholder-fim">
+                    <div>I</div>
+                    <div>IM</div>
+                    <div>RR</div>
+                </div>
+            </section>
+        </div>
+        
+    </main>
 </body>
 </html>

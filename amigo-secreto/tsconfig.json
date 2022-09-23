@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-        "outDir": "app/js",
+        "outDir": "app/dist",
         "target": "ES6",
         "noEmitOnError": true,
         "noImplicitAny": true,
